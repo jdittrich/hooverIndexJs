@@ -40,20 +40,20 @@ const hooverFromIncomeList = function (incomes) {
 
 
 /**
- * @param {object[]} aggregatedCounts - array of edit counts, aggregated by frequency
- * @param {number} aggregatedCounts[].edits - the edit count
- * @param {number} aggregatedCounts[].frequency - how often that edit count is.
+ * @param {object[]} aggregatedCounts - array of incomes, aggregated by their frequency
+ * @param {number} aggregatedCounts[].income - the income
+ * @param {number} aggregatedCounts[].frequency - how often that income is.
  * @returns {number} the hoover score
  * 
  * This function processes the aggregated and shorter form to 
- * store edit count data: a certain edit count (edits) and how many accounts have this edit count (frequency)
+ * store edit count data: a certain income and how many accounts have this income (frequency)
  * 
  */
-const hooverFromAggregatedCounts = function (aggregatedIncomes) {
+const hooverFromAggregatedIncomes = function (aggregatedIncomes) {
   const sumOfAccounts = aggregatedIncomes.reduce((prev, curr) => prev + (curr.frequency), 0);
-  const totalSumOfIncome = aggregatedIncomes.reduce((prev, curr) => prev + (curr.edits * curr.frequency), 0);
+  const totalSumOfIncome = aggregatedIncomes.reduce((prev, curr) => prev + (curr.income * curr.frequency), 0);
   const averageIncome = totalSumOfIncome / sumOfAccounts;
-  const sumOfDifferencesToMean = aggregatedIncomes.reduce((prev, curr) => prev + ((Math.abs(curr.edits - averageIncome)) * curr.frequency), 0);
+  const sumOfDifferencesToMean = aggregatedIncomes.reduce((prev, curr) => prev + ((Math.abs(curr.income - averageIncome)) * curr.frequency), 0);
 
   const hoover = 0.5 * (sumOfDifferencesToMean / totalSumOfIncome);
 
@@ -62,7 +62,7 @@ const hooverFromAggregatedCounts = function (aggregatedIncomes) {
 
 
 export {
-  hooverFromAggregatedCounts,
+  hooverFromAggregatedIncomes,
   hooverFromIncomeList,
   getSumOfArray,
   getAverageOfArray,
