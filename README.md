@@ -16,8 +16,7 @@ A simple ES6 implementation of the [Hoover Index](https://en.wikipedia.org/wiki/
 **Kind**: global function  
 **Returns**: <code>number</code> - the hoover score
 
-As we do not need to know the names of the accounts that made the edits
-this can be just an array of edit counts  
+Each entry in the incomes array is the income of one person.   
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -30,7 +29,7 @@ this can be just an array of edit counts
 **Returns**: <code>number</code> - the hoover score
 
 This function processes the aggregated and shorter form to 
-store edit count data: a certain income and how many accounts have this income (frequency)  
+store edit count data: a certain income and how many people have this income (frequency)  
 
 | Param | Type | Description |
 | --- | --- | --- |
