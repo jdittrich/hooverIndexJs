@@ -1,5 +1,5 @@
 # hooverIndexJs
-A simple ES6 implementation of the HooverIndex
+A simple ES6 implementation of the [Hoover Index](https://en.wikipedia.org/wiki/Hoover_index). The hoover index is a value that indicates the inequality within a list of values, e.g. for income or wealth. Thus, it is similar to the [Gini-Coefficient](https://en.wikipedia.org/wiki/Gini_coefficient) (But easier to implement). While it is most commonly used to measure economic inequality, nothing hinders you to use it to measure the (in) equality of editing contributions in a Wiki or amount of food eaten by party guest or whatever. 
 
 ## Functions
 
